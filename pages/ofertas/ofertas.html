@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ofertas del día en Sin Culpa — Tecnología, ropa, hogar y más con descuentos exclusivos por tiempo limitado.">
+    <meta name="keywords" content="ofertas, descuentos, ecommerce, compras online, Sin Culpa, Argentina">
+    <meta name="author" content="Sin Culpa S.R.L.">
+    <meta property="og:title" content="Ofertas — Sin Culpa">
+    <meta property="og:description" content="Descuentos exclusivos por tiempo limitado. Comprá sin culpa.">
+    <meta property="og:type" content="website">
+    <title>Ofertas — Sin Culpa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../estilos_index.css">
+    <link rel="stylesheet" href="../../estilos_navbar_&_footer.css">
+    <link rel="stylesheet" href="./estilos_ofertas.css">
+    <script src="../../productos.js" defer></script>
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="./ofertas.js" defer></script>
+</head>
+ 
+<body>
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="sc-logo">
+                <a href="../../index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="../../img/logos_nav_footer/logo_chico.png" alt="Sin Culpa — Compras On-Line">
+                </a>
+            </div>
+            <ul id="nav-links" role="list"></ul>
+            <div id="user-container" class="user-nav-container"></div>
+        </nav>
+    </header>
+ 
+    <main id="main-content">
+        <section class="oferta-hero" aria-label="Ofertas destacadas">
+            <div class="oferta-hero__contenedor">
+                <div class="oferta-hero__texto">
+                    <span class="oferta-hero__chip"><i class="fa-solid fa-bolt"></i> Tiempo limitado</span>
+                    <h1>Ofertas <span>Sin Culpa</span></h1>
+                    <p>Los mejores descuentos en tecnología, hogar, moda y más. Aprovechalas antes de que se acaben.</p>
+                </div>
+                <img class="oferta-hero__img" src="../../img/imagenOfertas.png" alt="" loading="lazy">
+            </div>
+        </section>
+ 
+        <section class="oferta-grid-section" aria-label="Catálogo de ofertas">
+            <div class="oferta-grid-section__header">
+                <h2>Descuentos <span>de la semana</span></h2>
+                <p>Precios con rebaja directa, sin letra chica.</p>
+            </div>
+ 
+            <div class="oferta-grid" id="ofertas-grid" role="list"></div>
+ 
+            <div class="oferta-empty" id="ofertas-empty" role="status" aria-live="polite" style="display:none">
+                <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                <p>No hay ofertas disponibles por el momento.</p>
+            </div>
+        </section>
+ 
+        <section class="oferta-recomendados" aria-label="Mas ofertas">
+            <div class="oferta-grid-section__header">
+                <h2>Más <span>ofertas para vos</span></h2>
+                <p>Traídas en tiempo real, directo desde nuestros proveedores.</p>
+            </div>
+
+            <div class="oferta-grid" id="recomendados-grid" role="list">
+                <p class="recomendados-loading" id="recomendados-loading">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Buscando más ofertas...
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-custom" id="contacto-footer" role="contentinfo"></footer>
+</body>
+</html>

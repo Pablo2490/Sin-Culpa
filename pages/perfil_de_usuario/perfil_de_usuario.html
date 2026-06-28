@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi Perfil de Usuario — Sin Culpa">
+    <title>Mi Perfil — Sin Culpa</title>
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../estilos_navbar_&_footer.css">
+    <link rel="stylesheet" href="../../estilos_index.css">
+    <link rel="stylesheet" href="./estilos_PerfilUsuario.css">
+    <script src="../../productos.js" defer></script>
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="./perfil_de_usuario.js" defer></script>
+</head>
+ 
+<body id="top">
+ 
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="sc-logo">
+                <a href="../../index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="../../img/marca_logo.png" alt="Sin Culpa">
+                </a>
+            </div>
+            <ul id="nav-links" role="list"></ul>
+            <div class="user-nav-container" id="user-container"></div>
+        </nav>
+    </header>
+ 
+    <main class="perfil-main">
+        <div class="perfil-encabezado">
+            <div class="perfil-encabezado__inner">
+                <h1><i class="fa-solid fa-circle-user"></i> Mi Perfil</h1>
+                <p>Gestioná tu información personal y medios de pago.</p>
+            </div>
+        </div>
+ 
+        <div class="perfil-contenedor">
+            <div class="perfil-tarjeta">
+                <div class="perfil-info-basica">
+                    <div class="zona-avatar">
+                        <div class="contenedor-avatar">
+                            <img
+                                src="../../img/perfil_defecto.gif"
+                                alt="Foto de Perfil"
+                                class="avatar-circular"
+                                id="perf-avatar-img"
+                            >
+                        </div>
+                        <input type="file" id="input-file-avatar" accept="image/*" style="display:none">
+                        <button type="button" id="btn-cambiar-foto" class="btn-cambiar-foto">
+                            <i class="fa-solid fa-camera"></i> Cambiar foto
+                        </button>
+                    </div>
+ 
+                    <div class="datos-hero">
+                        <h2 id="perf-nombre-completo">Cargando...</h2>
+                        <span class="badge-cliente">
+                            <i class="fa-solid fa-star"></i> Cliente Sin Culpa
+                        </span>
+                        <p class="perfil-username" id="perf-username-display">@usuario</p>
+                    </div>
+                </div>
+ 
+                <div class="perfil-seccion">
+                    <h3 class="perfil-seccion__titulo">
+                        <i class="fa-solid fa-user"></i> Información Personal
+                    </h3>
+ 
+                    <div class="perfil-fila">
+                        <span><i class="fa-solid fa-id-badge"></i> Nombre/s y Apellido</span>
+                        <p id="perf-nombre-completo-dato">—</p>
+                    </div>
+                    <div class="perfil-fila">
+                        <span><i class="fa-solid fa-envelope"></i> Email</span>
+                        <p id="perf-email">—</p>
+                    </div>
+                    <div class="perfil-fila">
+                        <span><i class="fa-solid fa-id-card"></i> Documento de Identidad</span>
+                        <p id="perf-doc">—</p>
+                    </div>
+                    <div class="perfil-fila">
+                        <span><i class="fa-solid fa-location-dot"></i> Ubicación</span>
+                        <p id="perf-ubicacion">—</p>
+                    </div>
+                    <div class="perfil-fila">
+                        <span><i class="fa-solid fa-house"></i> Dirección</span>
+                        <p id="perf-direccion">—</p>
+                    </div>
+                </div>
+ 
+                <div class="perfil-seccion">
+                    <h3 class="perfil-seccion__titulo">
+                        <i class="fa-solid fa-wallet"></i> Medios de Pago
+                        <span class="titulo-hint">Guardá tus datos para agilizar el checkout</span>
+                    </h3>
+ 
+                    <div class="pago-acordeon" id="acord-credito">
+                        <button class="pago-acordeon__header" aria-expanded="false" data-target="panel-credito">
+                            <span><i class="fa-solid fa-credit-card"></i> Tarjeta de Crédito</span>
+                            <i class="fa-solid fa-chevron-down pago-acordeon__arrow"></i>
+                        </button>
+                        <div class="pago-acordeon__panel" id="panel-credito" hidden>
+                        </div>
+                    </div>
+
+                    <div class="pago-acordeon" id="acord-debito">
+                        <button class="pago-acordeon__header" aria-expanded="false" data-target="panel-debito">
+                            <span><i class="fa-regular fa-credit-card"></i> Tarjeta de Débito</span>
+                            <i class="fa-solid fa-chevron-down pago-acordeon__arrow"></i>
+                        </button>
+                        <div class="pago-acordeon__panel" id="panel-debito" hidden>
+                        </div>
+                    </div>
+ 
+                    <div class="pago-acordeon" id="acord-cbu">
+                        <button class="pago-acordeon__header" aria-expanded="false" data-target="panel-cbu">
+                            <span><i class="fa-solid fa-building-columns"></i> CBU / Transferencia Bancaria</span>
+                            <i class="fa-solid fa-chevron-down pago-acordeon__arrow"></i>
+                        </button>
+                        <div class="pago-acordeon__panel" id="panel-cbu" hidden>
+                        </div>
+                    </div>
+ 
+                    <div class="pago-acordeon" id="acord-crypto">
+                        <button class="pago-acordeon__header" aria-expanded="false" data-target="panel-crypto">
+                            <span><i class="fa-brands fa-bitcoin"></i> Cripto / Wallet Virtual</span>
+                            <i class="fa-solid fa-chevron-down pago-acordeon__arrow"></i>
+                        </button>
+                        <div class="pago-acordeon__panel" id="panel-crypto" hidden>
+                        </div>
+                    </div>
+ 
+                </div>
+ 
+                <div class="perfil-acciones">
+                    <a href="#" id="btn-perfil-logout" class="btn-accion btn-cerrar">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <div>
+                            <strong>Cerrar sesión</strong>
+                            <small>Salir de mi cuenta</small>
+                        </div>
+                    </a>
+                </div>
+ 
+            </div>
+ 
+            <div class="banner-ayuda">
+                <div class="ayuda-texto">
+                    <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                    <div>
+                        <h4>¿Necesitás ayuda?</h4>
+                        <p>Nuestro equipo está disponible 24/7 para asistirte.</p>
+                    </div>
+                </div>
+                <a href="../pages_footer/contacto.html" class="btn-soporte">Contactar soporte</a>
+            </div>
+ 
+        </div>
+    </main>
+ 
+    <footer class="footer-custom" id="contacto-footer" role="contentinfo"></footer>
+</body>
+</html>

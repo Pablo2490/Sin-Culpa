@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactanos — Sin Culpa">
+    <title>Contacto — Sin Culpa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../estilos_navbar_&_footer.css">
+    <link rel="stylesheet" href="../../estilos_index.css">
+    <link rel="stylesheet" href="./estilos_Contacto.css">
+    <script src="../../productos.js" defer></script>
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="./contacto.js" defer></script>
+</head>
+ 
+<body id="top">
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="sc-logo">
+                <a href="../../index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="../../img/logos_nav_footer/logo_chico.png" alt="Sin Culpa">
+                </a>
+            </div>
+            <ul id="nav-links" role="list"></ul>
+            <div id="user-container" class="user-nav-container"></div>
+        </nav>
+    </header>
+ 
+    <main id="main-content">
+        <div class="contacto-page">
+            <h1 class="contacto-title">
+                <i class="fa-solid fa-headset"></i> Contactanos
+            </h1>
+            <p class="contacto-subtitle">¿Tenés una duda o un problema con tu compra? Escribinos y te respondemos a la brevedad.</p>
+ 
+            <section class="section-formulario">
+                <div class="pago-autocompletar" id="contacto-autocompletar" style="display:none">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Tenés datos guardados en tu perfil.</span>
+                    <button type="button" id="btn-autocompletar-contacto">Usar datos del perfil</button>
+                </div>
+ 
+                <form class="form-form" id="form-contacto">
+                    <label for="nombre">Nombre & Apellido</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Coloca aquí tu nombre y apellido." required>
+ 
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Coloca aquí tu@email.com" required>
+ 
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono"
+                        pattern="[\+]?[\d\s\-\(\)]{8,}"
+                        title="Ingresar teléfono válido (+Código de país, código de área, número de teléfono)"
+                        placeholder="+54 9 11 555 4444" required>
+ 
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+ 
+                    <div class="form-actions">
+                        <button type="submit" id="btn-enviar">Enviar</button>
+                        <a href="../../index.html" class="btn-cancelar">Cancelar</a>
+                    </div>
+                </form>
+            </section>
+ 
+            <div id="modal-exito" class="modal-oculto">
+                <div class="modal-contenido">
+                    <i class="fa-solid fa-circle-check icono-exito"></i>
+                    <h2>¡Mensaje enviado con éxito!</h2>
+                    <p>Gracias por comunicarte con Sin Culpa. Te redirigiremos al inicio.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+ 
+    <footer id="contacto-footer" class="footer-custom" role="contentinfo"></footer>
+</body>
+</html>

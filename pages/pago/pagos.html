@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalizá tu compra de forma segura en Sin Culpa.">
+    <title>Pagar — Sin Culpa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../estilos_navbar_&_footer.css">
+    <link rel="stylesheet" href="../../estilos_index.css">
+    <link rel="stylesheet" href="./estilos_pagos.css">
+    <script src="../../productos.js" defer></script>
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="./pagos.js" defer></script>
+</head>
+ 
+<body>
+ 
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="sc-logo">
+                <a href="../../index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="../../img/logos_nav_footer/logo_chico.png" alt="Sin Culpa — Compras On-Line">
+                </a>
+            </div>
+            <ul id="nav-links" role="list"></ul>
+            <div id="user-container" class="user-nav-container"></div>
+        </nav>
+    </header>
+ 
+    <main id="main-content">
+        <div class="pago-page">
+ 
+            <h1 class="pago-title">
+                <i class="fa-solid fa-lock"></i> Finalizar compra
+            </h1>
+ 
+            <div class="pago-empty" id="pago-empty" style="display:none">
+                <i class="fa-solid fa-cart-xmark"></i>
+                <h2>No hay nada para pagar</h2>
+                <p>Tu carrito está vacío. Agregá productos antes de continuar.</p>
+                <a href="../../index.html" class="btn-go-shop">
+                    <i class="fa-solid fa-store"></i> Ir a comprar
+                </a>
+            </div>
+ 
+            <div class="pago-confirmacion" id="pago-confirmacion" style="display:none">
+                <i class="fa-solid fa-circle-check"></i>
+                <h2>¡Compra realizada con éxito!</h2>
+                <p>Te enviamos la confirmación a tu correo.<br>Número de pedido: <strong id="pedido-numero"></strong>
+                </p>
+                <a href="../../index.html" class="btn-go-shop">
+                    <i class="fa-solid fa-store"></i> Seguir comprando
+                </a>
+            </div>
+ 
+ 
+            <div class="pago-layout" id="pago-layout">
+ 
+                <section class="pago-form-section" aria-label="Datos de envío y pago">
+                    <form id="pago-form" novalidate>
+ 
+                        <div class="pago-autocompletar" id="pago-autocompletar-envio" style="display:none">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Tenés datos personales guardados en tu perfil.</span>
+                            <button type="button" id="btn-autocompletar-envio">Usar datos del perfil</button>
+                        </div>
+ 
+                        <fieldset class="pago-fieldset">
+                            <legend><i class="fa-solid fa-truck"></i> Datos de envío</legend>
+ 
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pago-nombre">Nombre completo *</label>
+                                    <input type="text" id="pago-nombre" name="nombre" placeholder="Ej: Juan Pérez"
+                                        autocomplete="name" required minlength="3">
+                                    <span class="form-error" id="error-pago-nombre"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pago-email">Correo electrónico *</label>
+                                    <input type="email" id="pago-email" name="email" placeholder="ejemplo@correo.com"
+                                        autocomplete="email" required>
+                                    <span class="form-error" id="error-pago-email"></span>
+                                </div>
+                            </div>
+ 
+                            <div class="form-group">
+                                <label for="pago-direccion">Dirección de envío *</label>
+                                <input type="text" id="pago-direccion" name="direccion"
+                                    placeholder="Calle, número, piso/depto" autocomplete="street-address" required
+                                    minlength="5">
+                                <span class="form-error" id="error-pago-direccion"></span>
+                            </div>
+ 
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pago-ciudad">Ciudad *</label>
+                                    <input type="text" id="pago-ciudad" name="ciudad" placeholder="Ej: Buenos Aires"
+                                        autocomplete="address-level2" required>
+                                    <span class="form-error" id="error-pago-ciudad"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pago-cp">Código postal *</label>
+                                    <input type="text" id="pago-cp" name="cp" placeholder="Ej: 1900"
+                                        autocomplete="postal-code" required minlength="3">
+                                    <span class="form-error" id="error-pago-cp"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+ 
+                        <fieldset class="pago-fieldset">
+                            <legend><i class="fa-solid fa-credit-card"></i> Datos de pago</legend>
+ 
+                            <div class="form-group metodo-pago-selector">
+                                <label for="pago-metodo">Elegí cómo querés pagar *</label>
+                                <select id="pago-metodo" name="metodoPago" required>
+                                    <option value="" disabled selected>Seleccioná un método de pago...</option>
+                                    <option value="credito">💳 Tarjeta de Crédito</option>
+                                    <option value="debito">💳 Tarjeta de Débito</option>
+                                    <option value="cbu">🏦 CBU / Transferencia Bancaria</option>
+                                    <option value="crypto">₿ Cripto / Wallet Virtual</option>
+                                </select>
+                            </div>
+ 
+                            <div id="pago-metodo-contenido"></div>
+ 
+                        </fieldset>
+ 
+                        <button type="submit" class="btn-confirmar-pago" id="btn-confirmar-pago">
+                            <i class="fa-solid fa-lock"></i> Confirmar y pagar
+                        </button>
+ 
+                    </form>
+                </section>
+ 
+                <aside class="pago-resumen" aria-label="Resumen del pedido">
+                    <h2 class="resumen-title">Resumen del pedido</h2>
+ 
+                    <div id="pago-items-lista" class="pago-items-lista"></div>
+ 
+                    <hr class="resumen-hr">
+ 
+                    <div class="resumen-row">
+                        <span>Subtotal</span>
+                        <span id="pago-subtotal">$ 0</span>
+                    </div>
+                    <div class="resumen-row resumen-envio">
+                        <span><i class="fa-solid fa-truck-fast"></i> Envío</span>
+                        <span class="envio-gratis">GRATIS</span>
+                    </div>
+                    <div class="resumen-row resumen-recargo" id="resumen-recargo-row" style="display:none">
+                        <span id="resumen-recargo-label">Recargo por cuotas</span>
+                        <span id="resumen-recargo">$ 0</span>
+                    </div>
+                    <hr class="resumen-hr">
+                    <div class="resumen-row resumen-total">
+                        <strong>Total</strong>
+                        <strong id="pago-total">$ 0</strong>
+                    </div>
+ 
+                    <div class="resumen-medios">
+                        <p>Medios de pago aceptados</p>
+                        <div class="medios-icons">
+                            <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                            <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                            <i class="fa-brands fa-cc-amex" title="Amex"></i>
+                            <i class="fa-brands fa-bitcoin" title="Cripto"></i>
+                        </div>
+                    </div>
+                </aside>
+ 
+            </div>
+        </div>
+    </main>
+ 
+    <footer class="footer-custom" id="contacto-footer" role="contentinfo"></footer>
+</body>
+</html>

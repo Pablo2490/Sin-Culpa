@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mi Carrito de Compras — Sin Culpa">
+    <title>Mi Carrito — Sin Culpa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../../estilos_index.css">
+    <link rel="stylesheet" href="../../estilos_navbar_&_footer.css">
+    <link rel="stylesheet" href="./estilos_carrito.css">
+    <script src="../../productos.js" defer></script>
+    <script src="../../navbar.js" defer></script>
+    <script src="../../footer.js" defer></script>
+    <script src="./carrito.js" defer></script>
+</head>
+ 
+<body>
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="sc-logo">
+                <a href="../../index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="../../img/logos_nav_footer/logo_chico.png" alt="Sin Culpa">
+                </a>
+            </div>
+            <ul id="nav-links" role="list"></ul>
+            <div id="user-container" class="user-nav-container"></div>
+        </nav>
+    </header>
+ 
+    <main id="main-content">
+        <div class="carrito-page">
+ 
+            <h1 class="carrito-title">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Mi Carrito
+            </h1>
+ 
+            <div class="carrito-empty" id="carrito-empty" style="display:none">
+                <i class="fa-solid fa-cart-xmark"></i>
+                <h2>Tu carrito está vacío</h2>
+                <p>¡No hay productos todavía! Agregá algo que te guste.</p>
+                <a href="../../index.html" class="btn-go-shop">
+                    <i class="fa-solid fa-store"></i> Ir a comprar
+                </a>
+            </div>
+ 
+            <div class="carrito-layout" id="carrito-layout">
+                <section class="carrito-items" aria-label="Productos en el carrito">
+                    <div id="carrito-lista"></div>
+ 
+                    <div class="carrito-actions">
+                        <button class="btn-vaciar" id="btn-vaciar">
+                            <i class="fa-solid fa-trash"></i> Vaciar carrito
+                        </button>
+                        <a href="../../index.html" class="btn-seguir">
+                            <i class="fa-solid fa-arrow-left"></i> Seguir comprando
+                        </a>
+                    </div>
+                </section>
+ 
+                <aside class="carrito-resumen" aria-label="Resumen de compra">
+                    <h2 class="resumen-title">Resumen de compra</h2>
+ 
+                    <div class="resumen-row">
+                        <span>Productos (<span id="resumen-cantidad">0</span>)</span>
+                        <span id="resumen-subtotal">$ 0</span>
+                    </div>
+                    <div class="resumen-row resumen-envio">
+                        <span><i class="fa-solid fa-truck-fast"></i> Envío</span>
+                        <span class="envio-gratis">GRATIS</span>
+                    </div>
+                    <hr class="resumen-hr">
+                    <div class="resumen-row resumen-total">
+                        <strong>Total</strong>
+                        <strong id="resumen-total">$ 0</strong>
+                    </div>
+ 
+                    <button class="btn-pagar" id="btn-pagar">
+                        <i class="fa-solid fa-lock"></i>
+                        Comprar ahora
+                    </button>
+ 
+                    <div class="resumen-medios">
+                        <p>Medios de pago aceptados</p>
+                        <div class="medios-icons">
+                            <span title="Visa"><i class="fa-brands fa-cc-visa"></i></span>
+                            <span title="Mastercard"><i class="fa-brands fa-cc-mastercard"></i></span>
+                            <span title="American Express"><i class="fa-brands fa-cc-amex"></i></span>
+                            <span title="PayPal"><i class="fa-brands fa-cc-paypal"></i></span>
+                        </div>
+                    </div>
+                </aside>
+ 
+            </div>
+        </div>
+ 
+    </main>
+ 
+    <footer class="footer-custom" id="contacto-footer" role="contentinfo"></footer>
+</body>
+</html>

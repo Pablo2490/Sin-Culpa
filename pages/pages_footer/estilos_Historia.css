@@ -1,0 +1,93 @@
+.seccion-historia {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5rem 4rem 7rem;
+    line-height: 1.8;
+    color: var(--gray-800);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+ 
+.seccion-historia h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--blue-dark);
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+ 
+.seccion-historia h1::after {
+    content: '';
+    display: block;
+    width: 8rem;
+    height: 0.4rem;
+    background-color: var(--mustard);
+    margin: 1.5rem auto 0;
+    border-radius: 0.2rem;
+}
+ 
+.seccion-historia p {
+    font-size: 1.6rem;
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+    width: 100%;
+    color: var(--gray-600);
+}
+ 
+.seccion-historia p:first-of-type::first-letter {
+    font-size: 4.6rem;
+    float: left;
+    margin-right: 1rem;
+    line-height: 1;
+    color: var(--blue-dark);
+    font-weight: 800;
+}
+
+@media screen and (max-width: 1280px) {
+    .seccion-historia {
+        padding: 4rem 3rem 6rem;
+    }
+ 
+    .seccion-historia h1 {
+        font-size: 2.6rem;
+    }
+ 
+    .seccion-historia p {
+        font-size: 1.5rem;
+        max-width: 100%;
+    }
+ 
+    .seccion-historia p:first-of-type::first-letter {
+        font-size: 4.2rem;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .seccion-historia {
+        padding: 3rem 2rem 5rem;
+        text-align: left;
+    }
+ 
+    .seccion-historia h1 {
+        font-size: 2.2rem;
+    }
+ 
+    .seccion-historia p {
+        font-size: 1.5rem;
+    }
+ 
+    .seccion-historia p:first-of-type::first-letter {
+        font-size: 3.8rem;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .seccion-historia h1 { font-size: 2rem; }
+    .seccion-historia p  { font-size: 1.4rem; }
+}

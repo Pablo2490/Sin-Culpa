@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta — Sin Culpa</title>
+    <link href="./estilos_crear_cuenta.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="./registro.js" defer></script>
+</head>
+ 
+<body>
+    <main>
+        <section class="section-formulario">
+            <form class="form-form" id="form-registro">
+ 
+                <!-- ── DATOS DE CUENTA ── -->
+                <p class="form-titulo">Crear Cuenta</p>
+                <p class="form-subtitulo">Completá tus datos para registrarte. Los campos con <strong style="color:#e53e3e">(*)</strong> son obligatorios.</p>
+                <hr class="form-separator">
+                <p class="form-section-label">Datos de acceso</p>
+ 
+                <div class="fila-nombres">
+                    <div class="grupo-input">
+                        <label for="username">Nombre de Usuario <span>(*)</span></label>
+                        <input type="text" id="username" name="username"
+                            placeholder="Solo letras, números y guion bajo (máx. 15 caracteres)"
+                            maxlength="15">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="password-reg">Contraseña <span>(*)</span></label>
+                        <input type="password" id="password-reg"
+                            placeholder="Mínimo 4 caracteres">
+                        <span class="msg-validacion"></span>
+                        <button type="button" class="btn-toggle-pass" id="togglePassReg">
+                            👁 Mostrar contraseña
+                        </button>
+                    </div>
+                </div>
+ 
+                <!-- ── DATOS PERSONALES ── -->
+                <hr class="form-separator">
+                <p class="form-section-label">Datos personales</p>
+ 
+                <div class="fila-nombres">
+                    <div class="grupo-input">
+                        <label for="nombre1">Nombre <span>(*)</span></label>
+                        <input type="text" id="nombre1" name="nombre1"
+                            placeholder="Tu primer nombre" maxlength="40">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="nombre2">Segundo Nombre</label>
+                        <input type="text" id="nombre2" name="nombre2"
+                            placeholder="Opcional" maxlength="40">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="apellido">Apellido <span>(*)</span></label>
+                        <input type="text" id="apellido" name="apellido"
+                            placeholder="Tu apellido" maxlength="40">
+                        <span class="msg-validacion"></span>
+                    </div>
+                </div>
+ 
+                <div class="fila-nombres">
+                    <div class="grupo-input">
+                        <label for="tipo_doc">Tipo de Documento <span>(*)</span></label>
+                        <select id="tipo_doc" name="tipo_doc">
+                            <option value="" disabled selected>Seleccioná tipo</option>
+                            <option value="dni">D.N.I</option>
+                            <option value="le">L.E</option>
+                            <option value="lc">L.C</option>
+                            <option value="ci">C.I</option>
+                            <option value="pasaporte">Pasaporte</option>
+                        </select>
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="num_doc">Número de Documento <span>(*)</span></label>
+                        <input type="text" id="num_doc" name="num_doc"
+                            placeholder="Solo números" maxlength="12">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="fecha_nac">Fecha de Nacimiento <span>(*)</span></label>
+                        <input type="date" id="fecha_nac" name="fecha_nac">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="email">E-mail <span>(*)</span></label>
+                        <input type="email" id="email" name="email"
+                            placeholder="tu@email.com" autocomplete="email">
+                        <span class="msg-validacion"></span>
+                    </div>
+                </div>
+ 
+                <!-- ── TELÉFONOS ── -->
+                <div class="fila-nombres">
+                    <div class="grupo-input">
+                        <label for="tel_fijo">Teléfono Fijo</label>
+                        <input type="tel" id="tel_fijo" name="tel_fijo"
+                            placeholder="+54 11 4555-4444">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="telefono">Teléfono Móvil <span>(*)</span></label>
+                        <input type="tel" id="telefono" name="telefono"
+                            placeholder="+54 9 11 555 4444">
+                        <span class="msg-validacion"></span>
+                    </div>
+                </div>
+ 
+                <!-- ── DIRECCIÓN ── -->
+                <hr class="form-separator">
+                <p class="form-section-label">Dirección de envío</p>
+ 
+                <!-- Fila: Calle | Altura | Piso | Depto | CP -->
+                <div class="fila-direccion">
+                    <div class="grupo-input" style="flex:3">
+                        <label for="direccion">Calle / Dirección <span>(*)</span></label>
+                        <input type="text" id="direccion" name="direccion"
+                            placeholder="Nombre de la calle" maxlength="80">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input" style="flex:1">
+                        <label for="altura">Altura <span>(*)</span></label>
+                        <input type="text" id="altura" name="altura"
+                            placeholder="Nro." maxlength="6">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input" style="flex:1">
+                        <label for="piso">Piso <span>(*)</span></label>
+                        <input type="text" id="piso" name="piso"
+                            placeholder="Ej: 3" maxlength="4">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input" style="flex:1">
+                        <label for="depto">Depto <span>(*)</span></label>
+                        <input type="text" id="depto" name="depto"
+                            placeholder="Ej: B" maxlength="1">
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input" style="flex:1">
+                        <label for="cp">C.P. <span>(*)</span></label>
+                        <input type="text" id="cp" name="codigo_postal"
+                            placeholder="Ej: 1414" maxlength="5">
+                        <span class="msg-validacion"></span>
+                    </div>
+                </div>
+ 
+                <!-- Fila: País | Provincia | Localidad -->
+                <div class="fila-geo">
+                    <div class="grupo-input">
+                        <label for="pais">País <span>(*)</span></label>
+                        <select id="pais" name="pais">
+                            <option value="" disabled selected>Seleccioná país</option>
+                            <!-- Sudamérica (sin Guyanas ni Surinam) -->
+                            <option value="AR">Argentina</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BR">Brasil</option>
+                            <option value="CL">Chile</option>
+                            <option value="CO">Colombia</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Perú</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="VE">Venezuela</option>
+                            <!-- Otros -->
+                            <option value="US">Estados Unidos</option>
+                            <option value="DE">Alemania</option>
+                            <option value="ES">España</option>
+                            <option value="IT">Italia</option>
+                        </select>
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="provincia">Provincia / Estado / Región <span>(*)</span></label>
+                        <select id="provincia" name="provincia" disabled>
+                            <option value="" disabled selected>Primero seleccioná un país</option>
+                        </select>
+                        <span class="msg-validacion"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="localidad">Localidad / Ciudad <span>(*)</span></label>
+                        <input type="text" id="localidad" name="localidad"
+                            placeholder="Tu ciudad" maxlength="60">
+                        <span class="msg-validacion"></span>
+                    </div>
+                </div>
+ 
+                <!-- ── ACCIONES ── -->
+                <hr class="form-separator">
+                <div class="form-actions">
+                    <button type="submit" class="btn-ingresar">Registrarse</button>
+                    <button type="reset" class="btn-limpiar">Limpiar</button>
+                    <a href="../../index.html" class="btn-cancelar">Cancelar</a>
+                </div>
+                <p class="form-link">¿Ya tenés cuenta? <a href="./login.html">Iniciá sesión</a></p>
+ 
+            </form>
+        </section>
+    </main>
+</body>
+</html>

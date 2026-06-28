@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión — Sin Culpa</title>
+    <link href="./estilos_Ingresar.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="section-formulario">
+            <p class="form-titulo">Iniciar Sesión</p>
+            <p class="form-subtitulo">Ingresá con tu usuario o email para continuar.</p>
+ 
+            <form class="form-form" id="form-login">
+                <div class="grupo-input">
+                    <label for="usuario">Usuario o Email <span>(*)</span></label>
+                    <input type="text" id="usuario" name="usuario"
+                        placeholder="Ingresá tu usuario o email">
+                    <span class="msg-validacion"></span>
+                </div>
+ 
+                <div class="grupo-input">
+                    <label for="password">Contraseña <span>(*)</span></label>
+                    <input type="password" id="password" name="password"
+                        placeholder="Ingresá tu contraseña">
+                    <span class="msg-validacion"></span>
+                    <button type="button" class="btn-toggle-pass" id="togglePass">
+                        👁 Mostrar contraseña
+                    </button>
+                </div>
+ 
+                <div class="form-actions">
+                    <button type="submit" class="btn-ingresar">Ingresar</button>
+                    <a href="../../index.html" class="btn-cancelar">Cancelar</a>
+                </div>
+ 
+                <p class="form-link">¿No tenés cuenta? <a href="./registro_de_cuenta.html">Registrate gratis</a></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sin Culpa — Ecommerce multirubro. Tecnología, ropa, electrodomésticos, celulares y más. Los mejores precios con envío a todo el país.">
+    <meta name="keywords" content="ecommerce, compras online, tecnología, ropa, electrodomésticos, Argentina, Sin Culpa">
+    <meta name="author" content="Sin Culpa S.R.L.">
+    <meta property="og:title" content="Sin Culpa — Compras On-Line">
+    <meta property="og:description" content="Los mejores productos al mejor precio. Comprá sin culpa.">
+    <meta property="og:type" content="website">
+    <title>Sin Culpa — Compras On-Line</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4d24c071d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./estilos_index.css">
+    <link rel="stylesheet" href="./estilos_navbar_&_footer.css">
+    <script src="./productos.js" defer></script>
+    <script src="./navbar.js" defer></script>
+    <script src="./footer.js" defer></script>
+    <script src="./main.js" defer></script>
+</head>
+
+<body>
+    <header class="sc-header" role="banner">
+        <nav class="sc-nav" aria-label="Navegación principal">
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="sc-logo">
+                <a href="./index.html" aria-label="Sin Culpa — Inicio">
+                    <img src="./img/logos_nav_footer/logo_chico.png" alt="Sin Culpa — Compras On-Line">
+                </a>
+            </div>
+
+            <ul id="nav-links" role="list"></ul>
+
+            <div id="user-container" class="user-nav-container"></div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="carrusel-section" aria-label="Productos destacados">
+            <div class="carrusel-wrapper">
+                <div class="carrusel-track" id="carrusel-track" role="list"></div>
+            </div>
+        </section>
+
+        <section class="search-section" aria-label="Buscador de productos">
+            <form class="search-form" id="search-form" role="search" novalidate>
+                <label for="search-category" class="visually-hidden">Categoría</label>
+                <select class="search-category-select" id="search-category" name="categoria"
+                    aria-label="Filtrar por categoría"></select>
+                <label for="search-input" class="visually-hidden">Buscar productos</label>
+                <input type="search" class="search-input" id="search-input" name="q"
+                    placeholder="Busca tus productos favoritos por marca, nombre y más..." autocomplete="off"
+                    aria-label="Buscar productos">
+
+                <button type="submit" class="search-btn" id="search-btn" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+
+        </section>
+        <section class="products-section" aria-label="Catálogo de productos">
+            <div class="products-section__header">
+                <h2 class="products-section__title">
+                    Todos los <span>productos</span>
+                </h2>
+            </div>
+
+            <div class="products-grid" id="productos-grid" role="list">
+            </div>
+
+            <div class="products-empty" id="productos-empty" role="status" aria-live="polite">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <p>No encontramos productos para tu búsqueda.</p>
+            </div>
+        </section>
+
+        <section class="resenas-section" aria-label="Reseñas de clientes">
+            <div class="resenas-section__header">
+                <h2 class="resenas-section__title">
+                    Lo que dicen <span>nuestros clientes</span>
+                </h2>
+                <p class="resenas-section__subtitle">Miles de compras todos los días, sin culpa.</p>
+            </div>
+
+            <div class="resenas-wrapper">
+                <div class="resenas-track" id="resenas-track" role="list">
+                    <p class="resenas-loading" id="resenas-loading">
+                        <i class="fa-solid fa-spinner fa-spin"></i> Cargando reseñas...
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-custom" id="contacto-footer" role="contentinfo"></footer>
+</body>
+</html>

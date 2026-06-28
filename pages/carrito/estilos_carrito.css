@@ -1,0 +1,391 @@
+.carrito-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3.2rem 2rem 4rem;
+}
+ 
+.carrito-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--blue-dark);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+ 
+.carrito-title i { color: var(--mustard-dark); }
+ 
+.carrito-empty {
+    text-align: center;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+}
+ 
+.carrito-empty i {
+    font-size: 6rem;
+    color: var(--gray-400);
+}
+ 
+.carrito-empty h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--gray-600);
+}
+ 
+.carrito-empty p {
+    font-size: 1.6rem;
+    color: var(--gray-400);
+}
+ 
+.btn-go-shop {
+    background: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1.2rem 2.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.6rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: background var(--transition), transform 0.2s;
+    margin-top: 0.8rem;
+}
+ 
+.btn-go-shop:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+ 
+.carrito-layout {
+    display: grid;
+    grid-template-columns: 1fr 36rem;
+    gap: 2.4rem;
+    align-items: start;
+}
+ 
+.carrito-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+ 
+.carrito-item {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    display: grid;
+    grid-template-columns: 12rem 1fr auto;
+    gap: 1.6rem;
+    align-items: center;
+    padding: 1.6rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+ 
+.carrito-item:hover {
+    border-color: var(--blue-light);
+    box-shadow: var(--shadow-md);
+}
+ 
+.carrito-item__img-wrapper {
+    width: 12rem;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--gray-100);
+    flex-shrink: 0;
+}
+ 
+.carrito-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+.carrito-item__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+}
+ 
+.carrito-item__nombre {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--gray-800);
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+ 
+.carrito-item__cat {
+    font-size: 1.2rem;
+    color: var(--blue);
+    font-weight: 700;
+}
+ 
+.carrito-item__precio-unit {
+    font-size: 1.3rem;
+    color: var(--gray-400);
+}
+ 
+.carrito-item__precio-total {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--gray-800);
+}
+ 
+.carrito-item__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.2rem;
+    flex-shrink: 0;
+}
+ 
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+ 
+.cantidad-btn {
+    background: var(--gray-100);
+    border: none;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.cantidad-btn:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+ 
+.cantidad-display {
+    width: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    color: var(--gray-800);
+    background: var(--white);
+}
+ 
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    color: var(--error);
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+}
+ 
+.btn-eliminar-item:hover { background: rgba(229,62,62,0.08); }
+ 
+.carrito-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+}
+ 
+.btn-vaciar {
+    background: none;
+    border: 2px solid var(--error);
+    color: var(--error);
+    padding: 0.9rem 2rem;
+    border-radius: var(--radius-sm);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all var(--transition);
+}
+ 
+.btn-vaciar:hover {
+    background: var(--error);
+    color: var(--white);
+}
+ 
+.btn-seguir {
+    background: none;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    padding: 0.9rem 2rem;
+    border-radius: var(--radius-sm);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all var(--transition);
+}
+ 
+.btn-seguir:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+ 
+.carrito-resumen {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    padding: 2.4rem;
+    position: sticky;
+    top: calc(var(--nav-h) + 2rem);
+}
+ 
+.resumen-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gray-800);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--gray-200);
+    padding-bottom: 1.2rem;
+}
+ 
+.resumen-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--gray-600);
+    margin-bottom: 1.2rem;
+}
+ 
+.resumen-envio { color: var(--gray-600); }
+ 
+.envio-gratis {
+    color: var(--success);
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+ 
+.resumen-hr {
+    border: none;
+    border-top: 2px solid var(--gray-200);
+    margin: 1.6rem 0;
+}
+ 
+.resumen-total {
+    font-size: 2rem;
+    color: var(--gray-800);
+    margin-bottom: 0;
+}
+ 
+.btn-pagar {
+    width: 100%;
+    background: var(--mustard);
+    color: var(--gray-800);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 1.4rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+    transition: background var(--transition), transform 0.15s;
+    cursor: pointer;
+}
+ 
+.btn-pagar:hover {
+    background: var(--mustard-dark);
+    transform: translateY(-2px);
+}
+ 
+.btn-pagar:active { transform: scale(0.98); }
+ 
+.resumen-medios {
+    margin-top: 2rem;
+    text-align: center;
+}
+ 
+.resumen-medios p {
+    font-size: 1.2rem;
+    color: var(--gray-400);
+    margin-bottom: 0.8rem;
+}
+ 
+.medios-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+ 
+.medios-icons i {
+    font-size: 2.8rem;
+    color: var(--gray-400);
+    transition: color 0.2s;
+}
+ 
+.medios-icons i:hover { color: var(--blue); }
+ 
+@media (max-width: 900px) {
+    .carrito-layout {
+        grid-template-columns: 1fr;
+    }
+ 
+    .carrito-resumen {
+        position: static;
+    }
+}
+ 
+@media (max-width: 600px) {
+    .carrito-item {
+        grid-template-columns: 9rem 1fr;
+        grid-template-rows: auto auto;
+    }
+ 
+    .carrito-item__img-wrapper { width: 9rem; }
+ 
+    .carrito-item__controls {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .carrito-page { padding: 2rem 1.2rem 3rem; }
+    .carrito-title { font-size: 2.2rem; }
+    .btn-vaciar, .btn-seguir { flex: 1; justify-content: center; }
+}

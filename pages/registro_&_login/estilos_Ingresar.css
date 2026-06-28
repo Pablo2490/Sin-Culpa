@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+ 
+/* #region Config Global */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+html {
+    font-size: 62.5%;
+}
+/* #endregion */
+ 
+/* #region Body & Layout */
+body {
+    background-color: #eaf5fd;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+ 
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.section-formulario {
+    width: 100%;
+    max-width: 50rem;
+    padding: 5rem;
+    background-color: #ffffff;
+    border-radius: 1.6rem;
+    box-shadow: 0 8px 40px rgba(44, 82, 130, 0.18);
+    border-top: 5px solid #2c5282;
+}
+ 
+/* Logo / título del form */
+.form-titulo {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #2c5282;
+    text-align: center;
+    margin-bottom: 0.6rem;
+}
+ 
+.form-subtitulo {
+    font-size: 1.4rem;
+    color: #4a5568;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+/* #endregion */
+ 
+/* #region Form */
+.form-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+ 
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+ 
+.grupo-input label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c5282;
+}
+ 
+.grupo-input label span {
+    color: #e53e3e;
+}
+ 
+.grupo-input input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border: 2px solid #e8edf3;
+    border-radius: 0.8rem;
+    background-color: #f7f8fa;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: #1a202c;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+ 
+.grupo-input input::placeholder {
+    color: #9aa5b4;
+}
+ 
+.grupo-input input:focus {
+    border-color: #4a7fb5;
+    box-shadow: 0 0 0 0.3rem rgba(74, 127, 181, 0.18);
+    background-color: #eaf5fd;
+}
+ 
+.msg-validacion {
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-height: 1.6rem;
+    display: block;
+}
+ 
+.btn-toggle-pass {
+    background: none;
+    border: none;
+    color: #4a7fb5;
+    font-size: 1.3rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    margin-top: 0.2rem;
+    width: fit-content;
+    transition: color 0.2s;
+}
+ 
+.btn-toggle-pass:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+/* #endregion */
+ 
+/* #region Botones */
+.form-actions {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+}
+ 
+.btn-ingresar,
+.btn-cancelar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.4rem;
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.15s, box-shadow 0.25s;
+    border: none;
+}
+ 
+.btn-ingresar {
+    background-color: #2c5282;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(44, 82, 130, 0.25);
+}
+ 
+.btn-ingresar:hover {
+    background-color: #4a7fb5;
+    transform: translateY(-1px);
+}
+ 
+.btn-ingresar:active {
+    transform: scale(0.97);
+}
+ 
+.btn-cancelar {
+    background-color: #ffffff;
+    color: #2c5282;
+    border: 2px solid #e8edf3;
+}
+ 
+.btn-cancelar:hover {
+    background-color: #eaf5fd;
+    border-color: #bee3f8;
+}
+ 
+/* Link ¿No tenés cuenta? */
+.form-link {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #4a5568;
+    margin-top: 0.4rem;
+}
+ 
+.form-link a {
+    color: #2c5282;
+    font-weight: 700;
+    text-decoration: none;
+}
+ 
+.form-link a:hover {
+    text-decoration: underline;
+    color: #4a7fb5;
+}
+/* #endregion */
+ 
+/* #region Responsive */
+@media screen and (max-width: 768px) {
+    .section-formulario {
+        padding: 3rem 2rem;
+        box-shadow: none;
+        border-top-width: 4px;
+    }
+ 
+    .form-actions {
+        flex-direction: column;
+    }
+ 
+    .btn-ingresar,
+    .btn-cancelar {
+        width: 100%;
+        padding: 1.6rem;
+    }
+}
+/* #endregion */
