@@ -118,6 +118,8 @@ function inicializarNavbar() {
         });
  
     } else {
+        // En desktop: botones en el user-container. En mobile: se ocultan de aquí
+        // y se inyectan al final del menú hamburguesa.
         userContainer.innerHTML = `
             <div class="user-guest-actions">
                 <a href="${prefijo}pages/registro_&_login/registro_de_cuenta.html" class="btn-guest btn-register">
@@ -127,6 +129,19 @@ function inicializarNavbar() {
                     <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
                 </a>
             </div>`;
+
+        // Inyectar los mismos botones al final del nav-links (menú hamburguesa)
+        // como un ítem separado con clase especial para mostrar sólo en mobile
+        const guestMobileHTML = `
+            <li class="nav-guest-mobile">
+                <a href="${prefijo}pages/registro_&_login/registro_de_cuenta.html" class="btn-guest btn-register">
+                    <i class="fa-solid fa-user-plus"></i> Registrarse
+                </a>
+                <a href="${prefijo}pages/registro_&_login/login.html" class="btn-guest btn-login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Iniciar Sesión
+                </a>
+            </li>`;
+        navLinksContainer.insertAdjacentHTML("beforeend", guestMobileHTML);
     }
  
     const navDropdown        = document.querySelector(".nav-dropdown");

@@ -50,6 +50,9 @@
         background: rgba(255,255,255,0.15);
     }
     
+    /* El ítem de guest para mobile se oculta en desktop */
+    .nav-guest-mobile { display: none; }
+
     .nav-carrito-link {
         background: var(--mustard) !important;
         color: var(--gray-800) !important;
@@ -432,6 +435,41 @@
         .dropdown-trigger .nombre { display: none; }
         .dropdown-trigger .fa-chevron-down { display: none; }
         .dropdown-trigger img { width: 3.6rem; height: 3.6rem; }
+
+        /* Guest en mobile: ocultar del header, mostrar en menú hamburguesa */
+        #user-container .user-guest-actions { display: none; }
+
+        .nav-guest-mobile {
+            display: flex !important;
+            gap: 1rem;
+            padding: 1.4rem 2rem;
+            border-top: 2px solid var(--mustard);
+        }
+
+        .nav-guest-mobile .btn-guest {
+            flex: 1;
+            justify-content: center;
+            font-size: 1.5rem;
+            padding: 0.9rem 1rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-guest-mobile .btn-register {
+            background: transparent;
+            border: 2px solid var(--blue-light);
+            color: var(--blue-light);
+        }
+
+        .nav-guest-mobile .btn-login {
+            background: var(--mustard);
+            border: 2px solid var(--mustard);
+            color: var(--gray-800);
+        }
         .footer-columns { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
         .column { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2rem; }
         .footer-header { flex-direction: column; gap: 1.5rem; text-align: center; }
